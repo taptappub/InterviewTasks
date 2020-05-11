@@ -22,11 +22,11 @@ object OneTimeSymbol {
     fun hasDuplicateSymbolsFaster(str: String): Boolean {
         val char_set = BooleanArray(256)
         for (element in str) {
-            val `val` = element.toInt()
-            if (char_set[`val`]) {        //символ уже был найден в строке
+            val value = element.toInt()
+            if (char_set[value]) {        //символ уже был найден в строке
                 return false
             }
-            char_set[`val`] = true
+            char_set[value] = true
         }
         return true
     }
