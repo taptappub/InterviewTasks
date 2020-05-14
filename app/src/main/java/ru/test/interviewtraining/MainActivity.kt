@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
          */
         OneTimeSymbolWithoutSet.tests.forEach {
             val result = OneTimeSymbolWithoutSet.isUniqueChars(it)
-            Log.i("InterviewTtaining", "OneTimeSymbolWithoutSet str = $it, isUniqueChars = $result")
+            Log.i("InterviewTraining", "OneTimeSymbolWithoutSet str = $it, isUniqueChars = $result")
         }
 
         /**
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
          */
         StringsTransposition.tests.forEach {
             val result = StringsTransposition.compare(it.first, it.second)
-            Log.i("InterviewTtaining", "StringsTransposition str1 = ${it.first}, str2 = ${it.second}, equals = $result")
+            Log.i("InterviewTraining", "StringsTransposition str1 = ${it.first}, str2 = ${it.second}, equals = $result")
         }
 
         /**
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
          */
         SpaceReplacer.tests.forEach {
             val result = SpaceReplacer.replace(it.first.first, it.first.second)
-            Log.i("InterviewTtaining", "SpaceReplacer str1 = ${it.first}, res = ${it.second}, str2 = $result")
+            Log.i("InterviewTraining", "SpaceReplacer str1 = ${it.first}, res = ${it.second}, str2 = $result")
         }
 
         /**
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
          */
         Palindrom.tests.forEach {
             val result = Palindrom.isPalindrom(it.first)
-            Log.i("InterviewTtaining", "Palindrom str1 = ${it.first}, res = ${it.second}, str2 = $result")
+            Log.i("InterviewTraining", "Palindrom str1 = ${it.first}, res = ${it.second}, str2 = $result")
         }
 
         /**
@@ -68,7 +68,34 @@ class MainActivity : AppCompatActivity() {
          */
         Palindrom.tests.forEach {
             val result = Palindrom.isBinaryPalindrom(it.first)
-            Log.i("InterviewTtaining", "BinaryPalindrom str1 = ${it.first}, res = ${it.second}, str2 = $result")
+            Log.i("InterviewTraining", "BinaryPalindrom str1 = ${it.first}, res = ${it.second}, str2 = $result")
+        }
+
+        /**
+         * Существуют три вида модифицирующих операций со строками: вставка
+         * символа, удаление символа и замена символа. Напишите функцию, которая
+         * проверяет, находятся ли две строки на расстоянии одной модификации (или
+         * нуля модификаций).
+         * Пример:
+         * pale, ple -> true
+         * pales, pale -> true
+         * pale, bale -> true
+         * pale, bake -> false
+         */
+        CheckModifications.tests.forEach {
+            val result = CheckModifications.checkModifications(it.first.first, it.first.second)
+            Log.i("InterviewTraining", "CheckModifications str = ${it.first}, res = ${it.second}, res2 = $result")
+        }
+
+        /**
+         * Реализуйте метод для выполнения простейшего сжатия строк с использованием счетчика повторяющихся символов.
+         * Например, строка ааЬсссссааа превращается в а2b1с5а3. Если сжатая строка не становится короче исходной,
+         * то метод возвращает исходную строку.
+         * Предполагается, что строка состоит только из букв верхнего и нижнего регистра (a-z).
+         */
+        Compressor.tests.forEach {
+            val result = Compressor.compress(it.first)
+            Log.i("InterviewTraining", "Compressor str = ${it.first}, res = ${it.second}, res2 = $result")
         }
     }
 }
