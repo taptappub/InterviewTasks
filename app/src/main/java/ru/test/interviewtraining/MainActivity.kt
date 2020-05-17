@@ -37,7 +37,10 @@ class MainActivity : AppCompatActivity() {
          */
         StringsTransposition.tests.forEach {
             val result = StringsTransposition.compare(it.first, it.second)
-            Log.i("InterviewTraining", "StringsTransposition str1 = ${it.first}, str2 = ${it.second}, equals = $result")
+            Log.i(
+                "InterviewTraining",
+                "StringsTransposition str1 = ${it.first}, str2 = ${it.second}, equals = $result"
+            )
         }
 
         /**
@@ -47,7 +50,10 @@ class MainActivity : AppCompatActivity() {
          */
         SpaceReplacer.tests.forEach {
             val result = SpaceReplacer.replace(it.first.first, it.first.second)
-            Log.i("InterviewTraining", "SpaceReplacer str1 = ${it.first}, res = ${it.second}, str2 = $result")
+            Log.i(
+                "InterviewTraining",
+                "SpaceReplacer str1 = ${it.first}, res = ${it.second}, str2 = $result"
+            )
         }
 
         /**
@@ -57,7 +63,10 @@ class MainActivity : AppCompatActivity() {
          */
         Palindrom.tests.forEach {
             val result = Palindrom.isPalindrom(it.first)
-            Log.i("InterviewTraining", "Palindrom str1 = ${it.first}, res = ${it.second}, str2 = $result")
+            Log.i(
+                "InterviewTraining",
+                "Palindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
+            )
         }
 
         /**
@@ -68,7 +77,10 @@ class MainActivity : AppCompatActivity() {
          */
         Palindrom.tests.forEach {
             val result = Palindrom.isBinaryPalindrom(it.first)
-            Log.i("InterviewTraining", "BinaryPalindrom str1 = ${it.first}, res = ${it.second}, str2 = $result")
+            Log.i(
+                "InterviewTraining",
+                "BinaryPalindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
+            )
         }
 
         /**
@@ -84,7 +96,10 @@ class MainActivity : AppCompatActivity() {
          */
         CheckModifications.tests.forEach {
             val result = CheckModifications.checkModifications(it.first.first, it.first.second)
-            Log.i("InterviewTraining", "CheckModifications str = ${it.first}, res = ${it.second}, res2 = $result")
+            Log.i(
+                "InterviewTraining",
+                "CheckModifications str = ${it.first}, res = ${it.second}, res2 = $result"
+            )
         }
 
         /**
@@ -95,7 +110,40 @@ class MainActivity : AppCompatActivity() {
          */
         Compressor.tests.forEach {
             val result = Compressor.compress(it.first)
-            Log.i("InterviewTraining", "Compressor str = ${it.first}, res = ${it.second}, res2 = $result")
+            Log.i(
+                "InterviewTraining",
+                "Compressor str = ${it.first}, res = ${it.second}, res2 = $result"
+            )
+        }
+
+        /**
+         * Имеется изображение, представленное матрицей NxN; каждый пиксел представлен 4 байтами. Напишите метод для поворота изображения на 90 градусов.
+         * Удастся ли вам выполнить эту операцию «на месте»?
+         */
+        MatrixRotator.tests.forEach {
+            MatrixRotator.rotateMatrix(it.first.size, it.first)
+            Log.i("InterviewTraining", "MatrixRotator str = ${it.first}, res = ${it.second}")
+        }
+
+        /**
+         * Напишите алгоритм, реализующий следующее условие: если элемент матрицы MxN равен О, то весь столбец и вся строка обнуляются.
+         */
+        MatrixNullify.tests.forEach {
+            MatrixNullify.nullify(it.first.size, it.first[0].size, it.first)
+            Log.i("InterviewTraining", "MatrixNullify str = ${it.first}, res = ${it.second}")
+        }
+
+        /**
+         * Допустим, что существует метод isSubstring, проверяющий, является ли одно слово подстрокой другого.
+         * Для двух строк sl и s2 напишите код, который проверяет, получена ли строка s2 циклическим сдвигом s1,
+         * используя только один вызов метода isSubstring (пример: слово waterbottle получено циклическим сдвигом erbottlewat).
+         */
+        ShiftStringChecker.tests.forEach {
+            val result = ShiftStringChecker.checkIfSubstring(it.first, it.second)
+            Log.i(
+                "InterviewTraining",
+                "ShiftStringChecker str = ${it.first}, str2 = ${it.second}, result = $result, control result = ${it.third}"
+            )
         }
     }
 }
