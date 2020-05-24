@@ -7,6 +7,7 @@ import ru.test.interviewtraining.arrays_and_hashtables.*
 import ru.test.interviewtraining.linkedlist.DeleteDuplicates
 import ru.test.interviewtraining.linkedlist.IndexItemFromEnd
 import ru.test.interviewtraining.linkedlist.RemoveNodeFromMiddle
+import ru.test.interviewtraining.linkedlist.SplitNodesByData
 
 class MainActivity : AppCompatActivity() {
 
@@ -196,6 +197,23 @@ class MainActivity : AppCompatActivity() {
             Log.i(
                 "InterviewTraining",
                 "RemoveNodeFromMiddle str = ${it.first}, number = ${it.second}, result = $result, control result = ${it.third}"
+            )
+        }
+
+        /**
+         * Напишите код для разбиения связного списка вокруг значения х, так чтобы
+         * все узлы, меньшие х, предшествовали узлам, большим или равным х. Если х
+         * содержится в списке, то значения х должны следовать строго после элементов, меньших х (см. далее). Элемент разбивки х может находиться где угодно
+         * в �правой части»; он не обязан располагаться между левой и правой частью.
+         * Пример:
+         * Ввод: 3 - > 5 - >8 - > 5 - >10 - > 2 - >1 [значение разбивки = 5]
+         * Вывод: 3 - >1- >2- >10- >5- >5- >8
+         */
+        SplitNodesByData.tests.forEach {
+            val result = SplitNodesByData.partition(it.first, it.second)
+            Log.i(
+                "InterviewTraining",
+                "SplitNodesByData str = ${it.first}, number = ${it.second}, result = $result, control result = ${it.third}"
             )
         }
     }
