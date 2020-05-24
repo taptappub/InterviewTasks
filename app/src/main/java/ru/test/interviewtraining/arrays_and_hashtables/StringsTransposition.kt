@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 /**
  * Метод, является ли одна строка перестановкой другой строки
@@ -33,8 +33,14 @@ object StringsTransposition {
 
     //O(n+m)
     fun compare(source: String, target: String): Boolean {
-        val targetHash: Hash = getHash(target)
-        val sourceHash: Hash = getHash(source)
+        val targetHash: Hash =
+            getHash(
+                target
+            )
+        val sourceHash: Hash =
+            getHash(
+                source
+            )
         return targetHash == sourceHash
     }
 
@@ -46,6 +52,9 @@ object StringsTransposition {
             binaryHash = binaryHash or char.toInt()
             sumHash += char.toInt()
         }
-        return Hash(sumHash, binaryHash)
+        return Hash(
+            sumHash,
+            binaryHash
+        )
     }
 }

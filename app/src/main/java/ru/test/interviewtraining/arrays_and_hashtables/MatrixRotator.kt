@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 /**
  * Имеется изображение, представленное матрицей NxN; каждый пиксел представлен 4 байтами. Напишите метод для поворота изображения на 90 градусов.

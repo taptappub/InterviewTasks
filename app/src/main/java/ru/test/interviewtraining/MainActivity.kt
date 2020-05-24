@@ -3,6 +3,10 @@ package ru.test.interviewtraining
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import ru.test.interviewtraining.arrays_and_hashtables.*
+import ru.test.interviewtraining.linkedlist.DeleteDuplicates
+import ru.test.interviewtraining.linkedlist.IndexItemFromEnd
+import ru.test.interviewtraining.linkedlist.RemoveNodeFromMiddle
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +23,7 @@ class MainActivity : AppCompatActivity() {
             val result = OneTimeSymbol.hasDuplicateSymbols(it)
             Log.i("InterviewTraining", "OneTimeSymbol str = $it, isNotUniqueChars = $result")
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Алгоритм, определяющий, все ли символы в строке встречаются только 1 раз
@@ -29,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             val result = OneTimeSymbolWithoutSet.isUniqueChars(it)
             Log.i("InterviewTraining", "OneTimeSymbolWithoutSet str = $it, isUniqueChars = $result")
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Является ли одна строка перестановкой символов второй строки?
@@ -42,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 "StringsTransposition str1 = ${it.first}, str2 = ${it.second}, equals = $result"
             )
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Заменить пробел на %20
@@ -55,6 +62,7 @@ class MainActivity : AppCompatActivity() {
                 "SpaceReplacer str1 = ${it.first}, res = ${it.second}, str2 = $result"
             )
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * является ли заданная строка перестановкой палиндрома
@@ -68,6 +76,7 @@ class MainActivity : AppCompatActivity() {
                 "Palindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
             )
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * является ли заданная строка перестановкой палиндрома
@@ -82,6 +91,7 @@ class MainActivity : AppCompatActivity() {
                 "BinaryPalindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
             )
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Существуют три вида модифицирующих операций со строками: вставка
@@ -101,6 +111,7 @@ class MainActivity : AppCompatActivity() {
                 "CheckModifications str = ${it.first}, res = ${it.second}, res2 = $result"
             )
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Реализуйте метод для выполнения простейшего сжатия строк с использованием счетчика повторяющихся символов.
@@ -115,6 +126,7 @@ class MainActivity : AppCompatActivity() {
                 "Compressor str = ${it.first}, res = ${it.second}, res2 = $result"
             )
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Имеется изображение, представленное матрицей NxN; каждый пиксел представлен 4 байтами. Напишите метод для поворота изображения на 90 градусов.
@@ -124,6 +136,7 @@ class MainActivity : AppCompatActivity() {
             MatrixRotator.rotateMatrix(it.first.size, it.first)
             Log.i("InterviewTraining", "MatrixRotator str = ${it.first}, res = ${it.second}")
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Напишите алгоритм, реализующий следующее условие: если элемент матрицы MxN равен О, то весь столбец и вся строка обнуляются.
@@ -132,6 +145,7 @@ class MainActivity : AppCompatActivity() {
             MatrixNullify.nullify(it.first.size, it.first[0].size, it.first)
             Log.i("InterviewTraining", "MatrixNullify str = ${it.first}, res = ${it.second}")
         }
+        Log.i("InterviewTraining", " ")
 
         /**
          * Допустим, что существует метод isSubstring, проверяющий, является ли одно слово подстрокой другого.
@@ -143,6 +157,45 @@ class MainActivity : AppCompatActivity() {
             Log.i(
                 "InterviewTraining",
                 "ShiftStringChecker str = ${it.first}, str2 = ${it.second}, result = $result, control result = ${it.third}"
+            )
+        }
+        Log.i("InterviewTraining", " ")
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        /**
+         * Напишите код для удаления дубликатов из несортированного связного списка.
+         * Дополнителыю
+         * Как вы будете решать задачу, если использовать временный буфер запрещено?
+         */
+        DeleteDuplicates.tests.forEach {
+            val result = DeleteDuplicates.deleteDuplicates(it.first)
+            Log.i(
+                "InterviewTraining",
+                "DeleteDuplicates str = ${it.first}, result = $result, control result = ${it.second}"
+            )
+        }
+
+        /*Реализуйте алгоритм для нахождения в односвязном списке k-го элемента с конца.*/
+        IndexItemFromEnd.tests.forEach {
+            val result = IndexItemFromEnd.find(it.first, it.second)
+            Log.i(
+                "InterviewTraining",
+                "IndexItemFromEnd str = ${it.first}, number = ${it.second}, result = $result, control result = ${it.third}"
+            )
+        }
+
+        /**
+         * Реализуйте алгоритм, удаляющий узел из середины односвязного списка (то
+         * есть узла, не являющегося ни начальным, ни конечным - не обязательно находящегося точно в середине). Доступ предоставляется только к этому узлу.
+         * Пример:
+         * Ввод: узел с из списка a - >b - > c - >d - >e - >f
+         * Вывод: ничего не возвращается, но новый список имеет вид: a - >b - >d - >e- >f
+         */
+        RemoveNodeFromMiddle.tests.forEach {
+            val result = RemoveNodeFromMiddle.remove(it.first, 3)
+            Log.i(
+                "InterviewTraining",
+                "RemoveNodeFromMiddle str = ${it.first}, number = ${it.second}, result = $result, control result = ${it.third}"
             )
         }
     }

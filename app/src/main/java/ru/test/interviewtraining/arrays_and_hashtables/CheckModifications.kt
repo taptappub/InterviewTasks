@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 import kotlin.math.abs
 

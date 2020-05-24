@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 /**
  * Допустим, что существует метод isSubstring, проверяющий, является ли одно слово подстрокой другого.

@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 /**
  * Напишите метод, заменяющий все пробелы в строке символами '%20 ' . Можете

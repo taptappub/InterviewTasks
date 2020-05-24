@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 /**
  * Алгоритм, определяющий, все ли символы в строке встречаются только 1 раз

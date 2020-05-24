@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 /**
  * Напишите функцию, которая проверяет, является ли заданная строка перестановкой палиндрома. (Палиндром - слово или фраза, одинаково читающиеся
@@ -31,7 +31,9 @@ object Palindrom {
         }
 
         return if (resString.length % 2 == 0) {
-            even(charSet)
+            even(
+                charSet
+            )
         } else {
             odd(charSet)
         }

@@ -1,4 +1,4 @@
-package ru.test.interviewtraining
+package ru.test.interviewtraining.arrays_and_hashtables
 
 
 //Реализуйте метод для выполнения простейшего сжатия строк с использованием счетчика повторяющихся символов.
