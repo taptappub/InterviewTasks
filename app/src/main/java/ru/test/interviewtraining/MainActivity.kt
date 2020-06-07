@@ -4,10 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import ru.test.interviewtraining.arrays_and_hashtables.*
-import ru.test.interviewtraining.linkedlist.DeleteDuplicates
-import ru.test.interviewtraining.linkedlist.IndexItemFromEnd
-import ru.test.interviewtraining.linkedlist.RemoveNodeFromMiddle
-import ru.test.interviewtraining.linkedlist.SplitNodesByData
+import ru.test.interviewtraining.linkedlist.*
+import ru.test.interviewtraining.linkedlist.PalyndromeList
 
 class MainActivity : AppCompatActivity() {
 
@@ -70,8 +68,8 @@ class MainActivity : AppCompatActivity() {
          *
          * O(3n). Данные скалдываются в хэштаблицу. Результат должен быть четным, либо 1 элемент должен быть нечетным
          */
-        Palindrom.tests.forEach {
-            val result = Palindrom.isPalindrom(it.first)
+        PalyndromeList.tests.forEach {
+            val result = PalyndromeList.isPalyndrome(it.first)
             Log.i(
                 "InterviewTraining",
                 "Palindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
@@ -85,8 +83,8 @@ class MainActivity : AppCompatActivity() {
          * O(2n). Данные складываются в единственный Int, где 0 - это четное количество встреч, 1 - нечетное.
          * если нечетных встреч больше 1, то не палиндром
          */
-        Palindrom.tests.forEach {
-            val result = Palindrom.isBinaryPalindrom(it.first)
+        PalyndromeArray.tests.forEach {
+            val result = PalyndromeArray.isBinaryPalindrom(it.first)
             Log.i(
                 "InterviewTraining",
                 "BinaryPalindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
@@ -214,6 +212,51 @@ class MainActivity : AppCompatActivity() {
             Log.i(
                 "InterviewTraining",
                 "SplitNodesByData str = ${it.first}, number = ${it.second}, result = $result, control result = ${it.third}"
+            )
+        }
+
+        /**
+         * Напишите код для удаления дубликатов из несортированного связного списка.
+         * Дополнителыю
+         * Как вы будете решать задачу, если использовать временный буфер запрещено?
+         */
+        Sum.tests.forEach {
+            val result = Sum.sum(it.first, it.second)
+            Log.i(
+                "InterviewTraining",
+                "Sum str1 = ${it.first}, str2 = ${it.second}, result = $result, control result = ${it.third}"
+            )
+        }
+
+        /**
+         * Реализуйте функцию, проверяющую, является ли связный список палиндромом
+         * abba -> true
+         * aba -> true
+         * abc -> false
+         * Подсказки: 5, 13, 29, 6 1 , 1 0 1
+         */
+        PalyndromeList.tests.forEach {
+            val result = PalyndromeList.isPalyndrome(it.first)
+            Log.i(
+                "InterviewTraining",
+                "Palindrom str = ${it.first}, result = $result, control result = ${it.second}"
+            )
+        }
+
+        /**
+         * Для кольцевого связного списка реализуйте алгоритм, возвращающий начальный узел петли.
+         * Определение
+         * Кольцевой связный список - это связный список, в котором указатель следующего узла ссылается на более ранний узел, образуя петлю.
+         * Пример:
+         * Ввод: A- >B- >C- >D- > E - >C (предыдущий узел с)
+         * Вывод: C
+         * Подсказки: 50, 69, 83, 90
+         */
+        FindCircle.tests.forEach {
+            val result = FindCircle.findBeginning(it.first)
+            Log.i(
+                "InterviewTraining",
+                "FindCircle str = ${it.first}, result = $result, control result = ${it.second}"
             )
         }
     }

@@ -10,7 +10,7 @@ package ru.test.interviewtraining.arrays_and_hashtables
  * Вывод: True ( перестановки : "taco cat " , "atco cta " , и т . д . )
  * Подсказки: 1 06, 1 2 1 , 1 34, 1 36
  */
-object Palindrom {
+object PalyndromeArray {
     val tests = listOf(
         "Tact Coa" to true,
         "" to true,

@@ -28,7 +28,7 @@ object SplitNodesByData {
         while (currentNode != null) {
             val next = currentNode.next
             currentNode.next = null
-            if (currentNode.data < x) {
+            if (currentNode.data!! < x) {
                 /* Вставляем узел в конец списка before*/
                 if (beforeStart == null) {
                     beforeStart = currentNode
