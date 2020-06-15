@@ -6,6 +6,7 @@ import android.util.Log
 import ru.test.interviewtraining.arrays_and_hashtables.*
 import ru.test.interviewtraining.linkedlist.*
 import ru.test.interviewtraining.linkedlist.PalyndromeList
+import ru.test.interviewtraining.stack.MyStack
 
 class MainActivity : AppCompatActivity() {
 
@@ -259,5 +260,32 @@ class MainActivity : AppCompatActivity() {
                 "FindCircle str = ${it.first}, result = $result, control result = ${it.second}"
             )
         }
+
+        /**
+         * Как реализовать стек, в котором кроме стандартных функций push и рор будет
+         * поддерживаться функция min, возвращающая минимальный элемент? Все
+         * операции - push, рор и min - должны выполняться за время 0( 1 ).
+         */
+        val stack = MyStack()
+        stack.apply {
+            push(3)
+            push(1)
+            push(2)
+            push(3)
+            push(4)
+            push(0)
+            push(9)
+            push(2)
+            push(4)
+        }
+        var min = stack.min()
+        stack.apply {
+            pop()
+            pop()
+            pop()
+            pop()
+            pop()
+        }
+        min = stack.min()
     }
 }
