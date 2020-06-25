@@ -6,7 +6,10 @@ import android.util.Log
 import ru.test.interviewtraining.arrays_and_hashtables.*
 import ru.test.interviewtraining.linkedlist.*
 import ru.test.interviewtraining.linkedlist.PalyndromeList
+import ru.test.interviewtraining.stack.MyQueue
 import ru.test.interviewtraining.stack.MyStack
+import ru.test.interviewtraining.stack.SetOfStack
+import ru.test.interviewtraining.stack.SortedStack
 
 class MainActivity : AppCompatActivity() {
 
@@ -287,5 +290,63 @@ class MainActivity : AppCompatActivity() {
             pop()
         }
         min = stack.min()
+
+        /*Как известно, слишком высокая стопка тарелок может развалиться. Следовательно, в реальной жизни, когда высота стопки превысила бы некоторое
+        пороговое значение, мы начали бы складывать тарелки в новую стопку. Реализуйте структуру данных SetOfStacks, имитирующую реальную ситуацию.
+        Структура SetOfStack должна состоять из нескольких стеков, новый стек
+        создается, как только предыдущий достигнет порогового значения. Методы
+        SetOfStacks . push ( ) и SetOfStacks . рор ( ) должны вести себя так же, как при
+        работе с одним стеком (то есть метод рор( ) должен возвращать те же значения, которые бы он возвращал при использовании одного большого стека).
+        Дополнительно
+        Реализуйте функцию popAt ( int index ) , которая осуществляет операцию рор
+        с заданным внутренним стеком*/
+        val mySetOfStack = SetOfStack(3)
+        mySetOfStack.apply {
+            push(1)
+            push(2)
+            push(3)
+            push(4)
+            push(5)
+            push(6)
+            push(7)
+            push(8)
+            push(9)
+        }
+        val qwe1 = mySetOfStack.pop()
+        val qwe2 = mySetOfStack.popAt(0)
+
+        /* Напишите класс MyQueue, который реализует очередь с использованием двух стеков */
+        val myQueue = MyQueue<Int>()
+        myQueue.apply {
+            push(1)
+            push(2)
+            push(3)
+            push(4)
+            push(5)
+            push(6)
+            push(7)
+            push(8)
+            push(9)
+        }
+        val asa1 = myQueue.pop()
+
+        /*
+         * Напишите программу сортировки стека, в результате которой наименьший
+         * элемент оказывается на вершине стека. Вы можете использовать дополнительный временный стек, но элементы не должны копироваться в другие
+         * структуры данных (например, в массив). Стек должен поддерживать следующие операции: push, рор, peek, isEmpty.
+         */
+        val sortedStack = SortedStack()
+        sortedStack.apply {
+            push(2)
+            push(8)
+            push(3)
+            push(4)
+            push(6)
+            push(1)
+            push(7)
+            push(5)
+            push(9)
+        }
+        val sortedStackPop = sortedStack.pop()
     }
 }
