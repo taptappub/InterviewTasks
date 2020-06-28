@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import ru.test.interviewtraining.arrays_and_hashtables.*
+import ru.test.interviewtraining.graphs.BinaryTree
+import ru.test.interviewtraining.graphs.Graph
+import ru.test.interviewtraining.graphs.WayFinder
 import ru.test.interviewtraining.linkedlist.*
 import ru.test.interviewtraining.linkedlist.PalyndromeList
 import ru.test.interviewtraining.stack.MyQueue
@@ -348,5 +351,23 @@ class MainActivity : AppCompatActivity() {
             push(9)
         }
         val sortedStackPop = sortedStack.pop()
+
+
+        ////////////////////////////////////////// ГРАФЫ //////////////////////////////////////////////////
+
+        /*
+         * Для заданного направленного графа разработайте алгоритм, проверяющий
+         * существование маршрута между двумя узлами.
+         */
+        val graph = Graph.init()
+        val res1 = WayFinder.hasWay(Graph.node1, Graph.node6)
+        val res2 = WayFinder.hasWay(Graph.node2, Graph.node3)
+
+        /**
+         * Напишите алгоритм создания бинарного дерева поиска с минимальной
+         * высотой для отсортированного (по возрастанию) массива с уникальными
+         * целочисленными элементами
+         */
+        val res = BinaryTree.createTree(listOf(1,2,3,4,5,6,7,8,9))
     }
 }
