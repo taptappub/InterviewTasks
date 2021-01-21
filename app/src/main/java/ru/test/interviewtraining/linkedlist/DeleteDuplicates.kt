@@ -46,12 +46,4 @@ object DeleteDuplicates {
         }
         return result
     }
-    /**
-     * Решение без доп памяти O(nlogn)
-     */
-//    for (i in 0..size) {
-//        for (j in i + 1..size) {
-//
-//        }
-//    }
 }

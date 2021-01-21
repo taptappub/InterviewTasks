@@ -9,6 +9,7 @@ import ru.test.interviewtraining.graphs.Graph
 import ru.test.interviewtraining.graphs.WayFinder
 import ru.test.interviewtraining.linkedlist.*
 import ru.test.interviewtraining.linkedlist.PalyndromeList
+import ru.test.interviewtraining.other.DuplicatesCounter
 import ru.test.interviewtraining.stack.MyQueue
 import ru.test.interviewtraining.stack.MyStack
 import ru.test.interviewtraining.stack.SetOfStack
@@ -369,5 +370,17 @@ class MainActivity : AppCompatActivity() {
          * целочисленными элементами
          */
         val res = BinaryTree.createTree(listOf(1,2,3,4,5,6,7,8,9))
+
+        ////////////////////////////////////////// ДРУГОЕ //////////////////////////////////////////////////
+        /*
+         * Почитать пары чисел в массиве
+         */
+        DuplicatesCounter.tests.forEach {
+            val res = DuplicatesCounter.findPairsCount(it.first.size, it.first.toTypedArray())
+            Log.i(
+                "InterviewTraining",
+                "DuplicatesCounter res = $res, needed = ${it.second}"
+            )
+        }
     }
 }
