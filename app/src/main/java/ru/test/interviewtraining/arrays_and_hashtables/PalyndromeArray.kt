@@ -11,13 +11,6 @@ package ru.test.interviewtraining.arrays_and_hashtables
  * Подсказки: 1 06, 1 2 1 , 1 34, 1 36
  */
 object PalyndromeArray {
-    val tests = listOf(
-        "Tact Coa" to true,
-        "" to true,
-        "ababab bababa" to true,
-        "ababab" to false,
-        "abcba" to true
-    )
 
     //участвуют только буквы и пробелы "a..zA..Z "
     //пробелы не участвуют в полиндроме

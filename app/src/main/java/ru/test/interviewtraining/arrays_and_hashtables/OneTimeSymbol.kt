@@ -4,11 +4,6 @@ package ru.test.interviewtraining.arrays_and_hashtables
  * Алгоритм, определяющий, все ли символы в строке встречаются только 1 раз
  */
 object OneTimeSymbol {
-    val tests = listOf(
-        "",
-        "srghf",
-        "sllls"
-    )
 
     //O(n)
     fun hasDuplicateSymbols(str: String): Boolean {
@@ -16,7 +11,7 @@ object OneTimeSymbol {
         str.forEach {
             hashMap.add(it)
         }
-        return hashMap.size != str.length
+        return hashMap.size == str.length
     }
     //O(n) но быстрее, потому что алгоритм прерывается сразу же при нахождении повторяющегося символа
     fun hasDuplicateSymbolsFaster(str: String): Boolean {
@@ -30,18 +25,6 @@ object OneTimeSymbol {
         }
         return true
     }
-}
-
-/**
- * Алгоритм, определяющий, все ли символы в строке встречаются только 1 раз
- * запрещено использовать дополнительные структуры данных
- */
-object OneTimeSymbolWithoutSet {
-    val tests = listOf(
-        "",
-        "srghf",
-        "sllls"
-    )
 
     /**
      * Суть в том, что у тебя есть битовый массив 000000000000..0 - всего в 32 нуля, потому что Int 2^32
@@ -49,7 +32,7 @@ object OneTimeSymbolWithoutSet {
      *
      * ограничение - только для количества символов < 32
      */
-    fun isUniqueChars(str: String): Boolean {
+    fun isUniqueCharsBinary(str: String): Boolean {
         var checker: Int = 0
         for (item: Char in str) {
             val el = item - 'a'
@@ -60,5 +43,4 @@ object OneTimeSymbolWithoutSet {
         }
         return true
     }
-
 }

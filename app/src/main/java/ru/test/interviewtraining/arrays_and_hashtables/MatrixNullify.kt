@@ -1,27 +1,9 @@
 package ru.test.interviewtraining.arrays_and_hashtables
 
 /**
- * Имеется изображение, представленное матрицей NxN; каждый пиксел представлен 4 байтами. Напишите метод для поворота изображения на 90 градусов.
- * Удастся ли вам выполнить эту операцию «на месте»?
+ * Занулить матрицу по горизонтали и по вертикали по заданным координатам
  */
 object MatrixNullify {
-    val tests = listOf(
-        Pair(
-            mutableListOf(
-                mutableListOf(1, 2, 3, 4),
-                mutableListOf(5, 0, 7, 8),
-                mutableListOf(9, 10, 11, 12),
-                mutableListOf(13, 14, 15, 16)
-            ),
-            mutableListOf(
-                mutableListOf(1, 0, 3, 4),
-                mutableListOf(0, 0, 0, 0),
-                mutableListOf(9, 0, 11, 12),
-                mutableListOf(13, 0, 15, 16)
-            )
-        )
-    )
-
 
     fun nullify(N: Int, M: Int, matrix: MutableList<MutableList<Int>>) {
         val xset = HashSet<Int>()

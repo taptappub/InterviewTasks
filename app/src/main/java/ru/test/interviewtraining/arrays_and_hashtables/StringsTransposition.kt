@@ -5,12 +5,6 @@ package ru.test.interviewtraining.arrays_and_hashtables
  */
 object StringsTransposition {
 
-    val tests = listOf(
-        "aaaab" to "abaaa",
-        "sllls" to "sdlll",
-        "aasd" to "a"
-    )
-
     data class Hash(
         val sumHash: Long,
         val hash: Int

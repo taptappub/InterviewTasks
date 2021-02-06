@@ -12,11 +12,6 @@ package ru.test.interviewtraining.arrays_and_hashtables
  */
 
 object SpaceReplacer {
-    val tests = listOf(
-        Pair("aaa ab", 6) to "aaa%20ab",
-        Pair("aaa ab    ", 6) to "aaa%20ab",
-        Pair(" ", 0) to ""
-    )
 
     //O(n)
     fun replace(str: String, len: Int): String {

@@ -8,16 +8,6 @@ package ru.test.interviewtraining.linkedlist
  * Подсказки: 5, 13, 29, 6 1 , 1 0 1
  */
 object PalyndromeList {
-    val tests = listOf(
-        Pair(
-            NodeInt(1, NodeInt(2, null)),
-            false
-        ),
-        Pair(
-            NodeInt(1, NodeInt(2, NodeInt(3, NodeInt(2, NodeInt(1, null))))),
-            true
-        )
-    )
 
     // O(n), где n > m
     fun isPalyndrome(node: NodeInt): Boolean {

@@ -21,153 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /**
-         * Алгоритм, определяющий, все ли символы в строке встречаются только 1 раз
-         *
-         * @see Задача решается через HashSet
-         */
-        OneTimeSymbol.tests.forEach {
-            val result = OneTimeSymbol.hasDuplicateSymbols(it)
-            Log.i("InterviewTraining", "OneTimeSymbol str = $it, isNotUniqueChars = $result")
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Алгоритм, определяющий, все ли символы в строке встречаются только 1 раз
-         *
-         * @see Задача решается через HashSet
-         */
-        OneTimeSymbolWithoutSet.tests.forEach {
-            val result = OneTimeSymbolWithoutSet.isUniqueChars(it)
-            Log.i("InterviewTraining", "OneTimeSymbolWithoutSet str = $it, isUniqueChars = $result")
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Является ли одна строка перестановкой символов второй строки?
-         *
-         * Вычисляется hash от символа
-         */
-        StringsTransposition.tests.forEach {
-            val result = StringsTransposition.compare(it.first, it.second)
-            Log.i(
-                "InterviewTraining",
-                "StringsTransposition str1 = ${it.first}, str2 = ${it.second}, equals = $result"
-            )
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Заменить пробел на %20
-         *
-         * 1) Можно использовать StringBuilder() - O(n)
-         */
-        SpaceReplacer.tests.forEach {
-            val result = SpaceReplacer.replace(it.first.first, it.first.second)
-            Log.i(
-                "InterviewTraining",
-                "SpaceReplacer str1 = ${it.first}, res = ${it.second}, str2 = $result"
-            )
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * является ли заданная строка перестановкой палиндрома
-         *
-         * O(3n). Данные скалдываются в хэштаблицу. Результат должен быть четным, либо 1 элемент должен быть нечетным
-         */
-        PalyndromeList.tests.forEach {
-            val result = PalyndromeList.isPalyndrome(it.first)
-            Log.i(
-                "InterviewTraining",
-                "Palindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
-            )
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * является ли заданная строка перестановкой палиндрома
-         *
-         * O(2n). Данные складываются в единственный Int, где 0 - это четное количество встреч, 1 - нечетное.
-         * если нечетных встреч больше 1, то не палиндром
-         */
-        PalyndromeArray.tests.forEach {
-            val result = PalyndromeArray.isBinaryPalindrom(it.first)
-            Log.i(
-                "InterviewTraining",
-                "BinaryPalindrom str1 = ${it.first}, res = ${it.second}, str2 = $result"
-            )
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Существуют три вида модифицирующих операций со строками: вставка
-         * символа, удаление символа и замена символа. Напишите функцию, которая
-         * проверяет, находятся ли две строки на расстоянии одной модификации (или
-         * нуля модификаций).
-         * Пример:
-         * pale, ple -> true
-         * pales, pale -> true
-         * pale, bale -> true
-         * pale, bake -> false
-         */
-        CheckModifications.tests.forEach {
-            val result = CheckModifications.checkModifications(it.first.first, it.first.second)
-            Log.i(
-                "InterviewTraining",
-                "CheckModifications str = ${it.first}, res = ${it.second}, res2 = $result"
-            )
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Реализуйте метод для выполнения простейшего сжатия строк с использованием счетчика повторяющихся символов.
-         * Например, строка ааЬсссссааа превращается в а2b1с5а3. Если сжатая строка не становится короче исходной,
-         * то метод возвращает исходную строку.
-         * Предполагается, что строка состоит только из букв верхнего и нижнего регистра (a-z).
-         */
-        Compressor.tests.forEach {
-            val result = Compressor.compress(it.first)
-            Log.i(
-                "InterviewTraining",
-                "Compressor str = ${it.first}, res = ${it.second}, res2 = $result"
-            )
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Имеется изображение, представленное матрицей NxN; каждый пиксел представлен 4 байтами. Напишите метод для поворота изображения на 90 градусов.
-         * Удастся ли вам выполнить эту операцию «на месте»?
-         */
-        MatrixRotator.tests.forEach {
-            MatrixRotator.rotateMatrix(it.first.size, it.first)
-            Log.i("InterviewTraining", "MatrixRotator str = ${it.first}, res = ${it.second}")
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Напишите алгоритм, реализующий следующее условие: если элемент матрицы MxN равен О, то весь столбец и вся строка обнуляются.
-         */
-        MatrixNullify.tests.forEach {
-            MatrixNullify.nullify(it.first.size, it.first[0].size, it.first)
-            Log.i("InterviewTraining", "MatrixNullify str = ${it.first}, res = ${it.second}")
-        }
-        Log.i("InterviewTraining", " ")
-
-        /**
-         * Допустим, что существует метод isSubstring, проверяющий, является ли одно слово подстрокой другого.
-         * Для двух строк sl и s2 напишите код, который проверяет, получена ли строка s2 циклическим сдвигом s1,
-         * используя только один вызов метода isSubstring (пример: слово waterbottle получено циклическим сдвигом erbottlewat).
-         */
-        ShiftStringChecker.tests.forEach {
-            val result = ShiftStringChecker.checkIfSubstring(it.first, it.second)
-            Log.i(
-                "InterviewTraining",
-                "ShiftStringChecker str = ${it.first}, str2 = ${it.second}, result = $result, control result = ${it.third}"
-            )
-        }
-        Log.i("InterviewTraining", " ")
-
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /**
          * Напишите код для удаления дубликатов из несортированного связного списка.
@@ -233,21 +86,6 @@ class MainActivity : AppCompatActivity() {
             Log.i(
                 "InterviewTraining",
                 "Sum str1 = ${it.first}, str2 = ${it.second}, result = $result, control result = ${it.third}"
-            )
-        }
-
-        /**
-         * Реализуйте функцию, проверяющую, является ли связный список палиндромом
-         * abba -> true
-         * aba -> true
-         * abc -> false
-         * Подсказки: 5, 13, 29, 6 1 , 1 0 1
-         */
-        PalyndromeList.tests.forEach {
-            val result = PalyndromeList.isPalyndrome(it.first)
-            Log.i(
-                "InterviewTraining",
-                "Palindrom str = ${it.first}, result = $result, control result = ${it.second}"
             )
         }
 
@@ -420,14 +258,6 @@ class MainActivity : AppCompatActivity() {
             Log.i(
                 "InterviewTraining",
                 "ValleysCounter res = $res, needed = ${it.second}"
-            )
-        }
-
-        Hourglass2D.tests.forEach {
-            val res = Hourglass2D.hourglassSum(it.first)
-            Log.i(
-                "InterviewTraining",
-                "Hourglass2D res = $res, needed = ${it.second}"
             )
         }
 

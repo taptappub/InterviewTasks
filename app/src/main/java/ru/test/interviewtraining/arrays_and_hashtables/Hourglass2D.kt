@@ -18,28 +18,6 @@ import kotlin.math.max
  * There are  hourglasses in . An hourglass sum is the sum of an hourglass' values. Calculate the hourglass sum for every hourglass in , then print the maximum hourglass sum. The array will always be .
  */
 object Hourglass2D {
-    val tests = listOf(
-        Pair(
-            arrayOf(
-                arrayOf(-9, -9, -9,  1,  1,  1),
-                arrayOf( 0, -9,  0,  4,  3,  2),
-                arrayOf(-9, -9, -9,  1,  2,  3),
-                arrayOf( 0,  0,  8,  6,  6,  0),
-                arrayOf( 0,  0,  0, -2,  0,  0),
-                arrayOf( 0,  0,  1,  2,  4,  0)
-            ), 28
-        ),
-        Pair(
-            arrayOf(
-                arrayOf(1, 1, 1, 0, 0, 0),
-                arrayOf(0, 1, 0, 0, 0, 0),
-                arrayOf(1, 1, 1, 0, 0, 0),
-                arrayOf(0, 0, 2, 4, 4, 0),
-                arrayOf(0, 0, 0, 2, 0, 0),
-                arrayOf(0, 0, 1, 2, 4, 0)
-            ), 19
-        )
-    )
 
     fun hourglassSum(arr: Array<Array<Int>>): Int {
         var max = -1000

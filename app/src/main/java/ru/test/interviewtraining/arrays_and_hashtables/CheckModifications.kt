@@ -13,13 +13,6 @@ import kotlin.math.abs
 //pale, bale -> true
 //pale, bake -> false
 object CheckModifications {
-    val tests = listOf(
-        Pair(Pair("pale", "ple"), true),
-        Pair(Pair("pales", "pale"), true),
-        Pair(Pair("pale", "bale"), true),
-        Pair(Pair("pale", "bake"), false),
-        Pair(Pair("pale", "paleee"), false)
-    )
 
     //case sensitive
     //O(n)

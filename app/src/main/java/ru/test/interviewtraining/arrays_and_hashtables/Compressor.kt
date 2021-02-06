@@ -6,12 +6,6 @@ package ru.test.interviewtraining.arrays_and_hashtables
 //то метод возвращает исходную строку.
 //Предполагается, что строка состоит только из букв верхнего и нижнего регистра (a-z).
 object Compressor {
-    val tests = listOf(
-        Pair("aaa", "a3"),
-        Pair("aabbcc", "aabbcc"),
-        Pair("aaaab", "a4b1"),
-        Pair("a", "a")
-    )
 
     //case sensitive
     //O(n)
