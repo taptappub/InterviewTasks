@@ -9,7 +9,7 @@ import ru.test.interviewtraining.graphs.Graph
 import ru.test.interviewtraining.graphs.WayFinder
 import ru.test.interviewtraining.linkedlist.*
 import ru.test.interviewtraining.linkedlist.PalyndromeList
-import ru.test.interviewtraining.other.DuplicatesCounter
+import ru.test.interviewtraining.other.*
 import ru.test.interviewtraining.stack.MyQueue
 import ru.test.interviewtraining.stack.MyStack
 import ru.test.interviewtraining.stack.SetOfStack
@@ -380,6 +380,78 @@ class MainActivity : AppCompatActivity() {
             Log.i(
                 "InterviewTraining",
                 "DuplicatesCounter res = $res, needed = ${it.second}"
+            )
+        }
+
+        /*
+         * Посчитать прыжки через облака, которые
+         */
+        FindTheShortestWay.tests.forEach {
+            val res = FindTheShortestWay.jumpingOnClouds(it.first.toTypedArray())
+            Log.i(
+                "InterviewTraining",
+                "FindTheShortestWay res = $res, needed = ${it.second}"
+            )
+        }
+
+        /**
+         * There is a string, , of lowercase English letters that is repeated infinitely many times. Given an integer, , find and print the number of letter a's in the first  letters of the infinite string.
+         * Example
+         * The substring we consider is , the first  characters of the infinite string. There are  occurrences of a in the substring.
+         */
+        RepeatedStrings.tests.forEach {
+            val res = RepeatedStrings.repeatedString(it.first, it.second)
+            Log.i(
+                "InterviewTraining",
+                "RepeatedStrings res = $res, needed = ${it.third}"
+            )
+        }
+
+        /*
+         * Complete the 'countingValleys' function below.
+         *
+         * The function is expected to return an INTEGER.
+         * The function accepts following parameters:
+         *  1. INTEGER steps
+         *  2. STRING path
+         */
+        ValleysCounter.tests.forEach {
+            val res = ValleysCounter.countingValleys(it.first.length, it.first)
+            Log.i(
+                "InterviewTraining",
+                "ValleysCounter res = $res, needed = ${it.second}"
+            )
+        }
+
+        Hourglass2D.tests.forEach {
+            val res = Hourglass2D.hourglassSum(it.first)
+            Log.i(
+                "InterviewTraining",
+                "Hourglass2D res = $res, needed = ${it.second}"
+            )
+        }
+
+        QueueBribes.tests.forEach {
+            val res = QueueBribes.myMinimumBribes(it.first)
+            Log.i(
+                "InterviewTraining",
+                "QueueBribes res = $res, needed = ${it.second}"
+            )
+        }
+
+        MinimumSwaps.tests.forEach {
+            val res = MinimumSwaps.minimumSwaps(it.first)
+            Log.i(
+                "InterviewTraining",
+                "MinimumSwaps res = $res, needed = ${it.second}"
+            )
+        }
+
+        ArrayManipulation.tests.forEach {
+            val res = ArrayManipulation.arrayManipulation(it.first, it.second)
+            Log.i(
+                "InterviewTraining",
+                "ArrayManipulation res = $res, needed = ${it.third}"
             )
         }
     }
